@@ -56,6 +56,11 @@ footer{text-align:center;font:10px Arial;letter-spacing:2px;color:#ad969e;paddin
 .vq{min-height:92vh;background:radial-gradient(ellipse at 50% 15%,#642b42 0%,#241b31 42%,#10131f 100%);color:#f8e9e9;border:1px solid #9c526b;box-shadow:0 20px 70px #24101f66;overflow:hidden;position:relative}
 .vq:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 34px,#ff526b0b 35px 36px),radial-gradient(circle at 50% 45%,#e53b5b20,transparent 48%);pointer-events:none}
 .vq>*{position:relative}
+.vq-video-bg{position:absolute!important;inset:0;z-index:0!important;overflow:hidden;opacity:.24;pointer-events:none;background:#17101f}
+.vq-video-bg iframe{position:absolute;top:50%;left:50%;width:177.78vh;height:100vh;min-width:100%;min-height:56.25vw;transform:translate(-50%,-50%) scale(1.12);border:0;filter:saturate(.8) contrast(1.08)}
+.vq:after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,#17101f88,#17101fcc 52%,#17101ff2);pointer-events:none}
+.vq>*:not(.vq-video-bg){z-index:1}
+
 .vq .kicker{color:#f3a5b2}.vq h2{font-size:clamp(38px,9vw,66px);letter-spacing:2px;color:#fff0f1;text-shadow:0 0 25px #f34e6d66}
 .vq p{color:#e3cbd3}.vq .primary{background:linear-gradient(110deg,#a92343,#e35a72);color:#fff}
 .vq-orb{width:160px;height:160px;border-radius:50%;margin:25px auto;background:radial-gradient(circle at 38% 32%,#fff4f2 0 8%,#ffb9c4 20%,#e34d68 45%,#641d3a 72%,#21172a 100%);box-shadow:0 0 25px #f34e6d88,0 0 70px #c52d5c55,0 0 0 12px #f15c7820;animation:orb 5s ease-in-out infinite}
@@ -152,6 +157,7 @@ footer{text-align:center;font:10px Arial;letter-spacing:2px;color:#ad969e;paddin
 </section>
 
 <section class="panel vq hidden" id="visionquest">
+ <div class="vq-video-bg" aria-hidden="true"><iframe src="https://www.youtube-nocookie.com/embed/oSVTAUKyrL8?autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;playlist=oSVTAUKyrL8&amp;playsinline=1&amp;rel=0&amp;modestbranding=1" title="Marvel VisionQuest official trailer background" allow="autoplay; encrypted-media; picture-in-picture" loading="lazy"></iframe></div>
  <div class="vq-tag">A LITTLE AFTER-CREDITS SCENE</div>
  <div class="vq-orb"></div>
  <div class="kicker">MARVEL TELEVISION PRESENTS</div>
@@ -160,7 +166,7 @@ footer{text-align:center;font:10px Arial;letter-spacing:2px;color:#ad969e;paddin
  <div class="vq-line"></div>
  <div class="vq-tag">ENTER THE MINDSPACE</div>
  <div class="vq-gallery">
-  <figure><img src="https://images-r2-1.thebrag.com/var/uploads/2025/10/vision.jpg" alt="White Vision from VisionQuest"><figcaption><b>WHITE VISION</b><span>Searching for who he is</span></figcaption></figure>
+  <figure><img src="https://img.youtube.com/vi/oSVTAUKyrL8/maxresdefault.jpg" alt="White Vision from VisionQuest"><figcaption><b>WHITE VISION</b><span>Searching for who he is</span></figcaption></figure>
   <figure><img src="https://m.media-amazon.com/images/M/MV5BZTQ2ZTVmMzEtOGFmMC00OGNjLWJkMjMtZDE1Y2QwOWZjZTM4XkEyXkFqcGc%40._V1_.jpg" alt="Vision and Ultron in VisionQuest"><figcaption><b>ULTRON</b><span>The voice inside his mind</span></figcaption></figure>
   <figure><img src="https://img.chip.com.tr/rcman/Cw940h529q95gm/storage/files/images/2026/10/02/vision-geri-donuyor-marvelin-yeni-dizisi-visionquestten-fragman-geldi-x8h1.jpg" alt="Vision close-up from VisionQuest"><figcaption><b>THE MINDSPACE</b><span>Every memory has a face</span></figcaption></figure>
  </div>
