@@ -104,6 +104,17 @@ main{width:100%;max-width:none;margin:0;padding:0}
 .panel .track{width:min(100%,290px)}
 .panel .breathe,.panel .moon,.panel .envelope{flex-shrink:0}
 #visionquest.vq{width:100vw;max-width:none}
+/* Gentle, cinematic transition into the final full-screen scene */
+#visionquest.vq.vq-arrive{opacity:0;transform:scale(1.025);filter:brightness(.72)}
+#visionquest.vq.vq-arrived{opacity:1;transform:scale(1);filter:brightness(1);transition:opacity 1.15s ease,transform 1.35s cubic-bezier(.2,.75,.2,1),filter 1.2s ease}
+#visionquest.vq .vq-video-bg{opacity:0;transition:opacity 1.8s ease .25s}
+#visionquest.vq.vq-arrived .vq-video-bg{opacity:.24}
+#visionquest.vq .vq-gallery figure{opacity:0;transform:translateY(18px)}
+#visionquest.vq.vq-arrived .vq-gallery figure{opacity:1;transform:translateY(0);transition:opacity .8s ease .55s,transform .9s cubic-bezier(.2,.75,.2,1) .55s}
+#visionquest.vq.vq-arrived .vq-gallery figure:nth-child(2){transition-delay:.72s}
+#visionquest.vq.vq-arrived .vq-gallery figure:nth-child(3){transition-delay:.88s}
+@media(prefers-reduced-motion:reduce){#visionquest.vq,#visionquest.vq *{transition:none!important;animation:none!important;transform:none!important;filter:none!important;opacity:1!important}}
+
 footer{min-height:12vh;display:flex;align-items:center;justify-content:center;margin:0}
 @media(max-height:680px){.panel,.hero{justify-content:flex-start;overflow-y:auto}.panel{padding-top:26px;padding-bottom:36px}}
 </style>
@@ -210,7 +221,7 @@ footer{min-height:12vh;display:flex;align-items:center;justify-content:center;ma
 </main>
 <script>
 let chosenScene=false,found=false,inhale=true;
-function show(id,p){document.getElementById(id).classList.remove('hidden');let b=document.getElementById('bar');if(b)b.style.width=p+'%';setTimeout(()=>document.getElementById(id).scrollIntoView({behavior:'smooth',block:'center'}),80)}
+function show(id,p){const target=document.getElementById(id);target.classList.remove('hidden');let b=document.getElementById('bar');if(b)b.style.width=p+'%';if(id==='visionquest'){window.scrollTo({top:0,behavior:'instant'});target.classList.remove('vq-arrive');void target.offsetWidth;target.classList.add('vq-arrive');requestAnimationFrame(()=>target.classList.add('vq-arrived'));}else{setTimeout(()=>target.scrollIntoView({behavior:'smooth',block:'start'}),80)}}
 function answer(a){show('welcome',0);if(a==='yes'){document.getElementById('welcomeTitle').textContent='Then this break is officially yours. 💗';document.getElementById('welcomeText').textContent='Put the records aside for a tiny moment. You have been working hard, and you deserve a breather.'}else{document.getElementById('welcomeTitle').textContent='Even if you are okay, you still deserve a tiny break. 🌷';document.getElementById('welcomeText').textContent='Just a little pause before you get back to everything. No typing, promise.'}}
 function scene(btn,emoji){document.querySelectorAll('#sceneChoices .pick').forEach(x=>x.classList.remove('selected'));btn.classList.add('selected');document.getElementById('sceneReply').innerHTML='<div class="card">'+emoji+' Lovely choice. Imagine the breeze, the quiet, and absolutely no records waiting for you for a moment. ♡</div>';document.getElementById('game1next').classList.remove('hidden')}
 function star(btn,yes){if(found)return;let r=document.getElementById('starReply');if(yes){found=true;btn.classList.add('selected');r.innerHTML='<div class="card">You found it! ⭐ Your detective skills are officially excellent.</div>';document.getElementById('game2next').classList.remove('hidden')}else{r.textContent='Almost! Look for the one that is not a heart. ♡'}}
