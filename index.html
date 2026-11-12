@@ -92,6 +92,20 @@ body:has(#visionquest:not(.hidden)){overflow:hidden}
 @keyframes sway{50%{transform:rotate(5deg) translateY(-5px)}}@keyframes fall{to{transform:translateY(110vh) rotate(230deg);opacity:0}}
 @keyframes breathe{0%,100%{transform:scale(.86)}50%{transform:scale(1.08)}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto}}
+
+/* Every step is a full-screen scene, not a centred card */
+html,body{width:100%;min-height:100%;margin:0}
+main{width:100%;max-width:none;margin:0;padding:0}
+.hero{width:100%;min-height:100vh;min-height:100svh;margin:0;padding:clamp(28px,7vh,80px) 22px}
+.panel{width:100%;min-height:100vh;min-height:100svh;margin:0;padding:clamp(28px,7vh,80px) 22px;border:0;border-radius:0;box-shadow:none;backdrop-filter:none;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.panel>*{width:min(100%,680px)}
+.panel .row{width:min(100%,680px)}
+.panel .card{width:min(100%,470px)}
+.panel .track{width:min(100%,290px)}
+.panel .breathe,.panel .moon,.panel .envelope{flex-shrink:0}
+#visionquest.vq{width:100vw;max-width:none}
+footer{min-height:12vh;display:flex;align-items:center;justify-content:center;margin:0}
+@media(max-height:680px){.panel,.hero{justify-content:flex-start;overflow-y:auto}.panel{padding-top:26px;padding-bottom:36px}}
 </style>
 
 <meta property="og:image" content="https://placehold.co/1200x630/F8E8EE/855C70.png?text=A+Little+Break+for+My+Sia">
