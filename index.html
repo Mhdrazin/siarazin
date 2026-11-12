@@ -170,7 +170,6 @@ function openLetter(){document.getElementById('env').classList.add('open');docum
 function celebrate(){let e=['💗','🌷','✨','🌸','♡','⭐'];for(let i=0;i<75;i++){let x=document.createElement('span');x.className='floaty';x.textContent=e[Math.floor(Math.random()*e.length)];x.style.left=Math.random()*100+'vw';x.style.animationDelay=Math.random()+'s';x.style.fontSize=(16+Math.random()*20)+'px';document.body.appendChild(x);setTimeout(()=>x.remove(),4200)}document.getElementById('letterText').insertAdjacentHTML('beforeend','<br><br><b>PS: Tonight, your only task is to get cozy and enjoy your episode. Goodnight, Siaa. 🌙</b>');let b=document.querySelector('#letter .primary');b.textContent='Continue to your VisionQuest ✨';b.onclick=()=>show('visionquest',100)}
 setInterval(()=>{inhale=!inhale;let b=document.getElementById('breathText');if(b)b.textContent=inhale?'breathe in':'breathe out'},4000);
 document.getElementById('env').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLetter()}});
-</script></body></html>
-<script>
+
 function finalHug(){let e=['❤️','✨','🌙','💗'];for(let i=0;i<55;i++){let x=document.createElement('span');x.className='floaty';x.textContent=e[Math.floor(Math.random()*e.length)];x.style.left=Math.random()*100+'vw';x.style.animationDelay=Math.random()+'s';x.style.fontSize=(18+Math.random()*20)+'px';document.body.appendChild(x);setTimeout(()=>x.remove(),4200)}}
-</script>
+</script></body></html>
