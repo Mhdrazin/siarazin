@@ -62,6 +62,17 @@ footer{text-align:center;font:10px Arial;letter-spacing:2px;color:#ad969e;paddin
 .vq-line{height:1px;width:min(80%,330px);margin:24px auto;background:linear-gradient(90deg,transparent,#f18b9e,transparent)}
 .vq-tag{font:10px Arial;letter-spacing:4px;color:#e9a1af}
 .vq-quote{font-size:20px!important;color:#ffe5e9!important;max-width:430px;margin:20px auto}
+.vq-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:22px auto;max-width:540px;text-align:left}
+.vq-gallery figure{margin:0;overflow:hidden;border:1px solid #9b5c70;border-radius:16px;background:#241b31;box-shadow:0 12px 25px #08091288}
+.vq-gallery figure:first-child{grid-column:1/-1}
+.vq-gallery img{display:block;width:100%;height:190px;object-fit:cover}
+.vq-gallery figure:first-child img{height:245px;object-position:center 30%}
+.vq-gallery figcaption{padding:11px 12px;display:grid;gap:5px}
+.vq-gallery figcaption b{font:11px Arial;letter-spacing:2px;color:#ffdce3}
+.vq-gallery figcaption span{font:13px Arial;color:#d8bdc8}
+.vq-watch{display:inline-block;margin:12px auto 6px;padding:14px 20px;border-radius:28px;background:#f5dce3;color:#512b3b;text-decoration:none;font:700 11px Arial;letter-spacing:1.5px}
+@media(max-width:420px){.vq-gallery img{height:145px}.vq-gallery figure:first-child img{height:205px}}
+
 @keyframes orb{50%{transform:scale(1.06);filter:hue-rotate(-10deg);box-shadow:0 0 38px #f34e6d,0 0 90px #c52d5c88,0 0 0 18px #f15c7820}}
 
 @keyframes sway{50%{transform:rotate(5deg) translateY(-5px)}}@keyframes fall{to{transform:translateY(110vh) rotate(230deg);opacity:0}}
@@ -143,15 +154,23 @@ footer{text-align:center;font:10px Arial;letter-spacing:2px;color:#ad969e;paddin
 <section class="panel vq hidden" id="visionquest">
  <div class="vq-tag">A LITTLE AFTER-CREDITS SCENE</div>
  <div class="vq-orb"></div>
- <div class="kicker">VISIONQUEST · TONIGHT'S FEATURE PRESENTATION</div>
- <h2>YOUR NEXT<br>ADVENTURE.</h2>
+ <div class="kicker">MARVEL TELEVISION PRESENTS</div>
+ <h2>VISIONQUEST</h2>
+ <p class="vq-quote">One synthezoid. A mind full of voices. A past that refuses to stay buried.</p>
  <div class="vq-line"></div>
- <p class="vq-quote">The records can wait. The world can wait. For tonight, your only mission is to get comfortable and enjoy the story. ❤️</p>
+ <div class="vq-tag">ENTER THE MINDSPACE</div>
+ <div class="vq-gallery">
+  <figure><img src="https://cdn.fakta.co/media/images/2026/05/x9qcs5iH4o.jpeg?height=674&amp;location=1&amp;quality=80&amp;watermark=1&amp;width=1200" alt="White Vision from VisionQuest"><figcaption><b>WHITE VISION</b><span>Searching for who he is</span></figcaption></figure>
+  <figure><img src="https://images2.minutemediacdn.com/image/upload/c_crop%2Cx_214%2Cy_0%2Cw_1887%2Ch_1061/c_fill%2Cw_1440%2Car_1440%3A810%2Cf_auto%2Cq_auto%2Cg_auto/images/ImageExchange/mmsport/385/01m41771shnk0fw0r6hd.jpg" alt="Vision and Ultron in VisionQuest"><figcaption><b>ULTRON</b><span>The voice inside his mind</span></figcaption></figure>
+  <figure><img src="https://www.el-balad.com/uploads/2026/09/27/jocasta-marvel-1bc42c5b_1200w.webp" alt="Vision close-up from VisionQuest"><figcaption><b>THE MINDSPACE</b><span>Every memory has a face</span></figcaption></figure>
+ </div>
+ <p class="tiny" style="color:#d9a9b4">VISION · ULTRON · THE MINDSPACE</p>
+ <div class="vq-line"></div>
+ <div class="vq-tag">YOUR MISSION TONIGHT</div>
+ <p class="vq-quote">The records can wait. The world can wait. Your only mission is to get comfortable, press play, and enjoy the story. ❤️</p>
  <p>Blanket? Ready. Snacks? Hopefully ready. Lights? A little dimmer.</p>
- <p>Now press play, Siaa. Let the screens glow and let your mind rest.</p>
+ <a class="vq-watch" href="https://www.disneyplus.com/browse/entity-8744ec55-8d14-4631-99b4-c889a2d6013f" target="_blank" rel="noopener">OPEN VISIONQUEST ON DISNEY+ ↗</a>
  <div class="vq-line"></div>
- <div class="vq-tag">MISSION OBJECTIVE</div>
- <p class="big" style="color:#ffe5e9">One episode. Zero worries. Maximum cozy.</p>
  <div class="flower">🌙</div>
  <h2 style="font-size:34px;letter-spacing:0">Goodnight, my Siaa.</h2>
  <p>Sleep peacefully whenever you finish. You are loved more than you know. ♡</p>
