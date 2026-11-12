@@ -52,6 +52,18 @@ button:focus-visible{outline:3px solid #b97d94;outline-offset:3px}
 .breathe{width:130px;height:130px;border-radius:50%;margin:22px auto;background:radial-gradient(circle,#fff,#f4d8e1 68%,#e6bdcb);box-shadow:0 0 0 11px #f4dce455;display:grid;place-items:center;animation:breathe 8s ease-in-out infinite}
 .breathe span{font:12px Arial;color:#936d7a;letter-spacing:1px}
 footer{text-align:center;font:10px Arial;letter-spacing:2px;color:#ad969e;padding:25px 0}
+/* VisionQuest finale */
+.vq{min-height:92vh;background:radial-gradient(ellipse at 50% 15%,#642b42 0%,#241b31 42%,#10131f 100%);color:#f8e9e9;border:1px solid #9c526b;box-shadow:0 20px 70px #24101f66;overflow:hidden;position:relative}
+.vq:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 34px,#ff526b0b 35px 36px),radial-gradient(circle at 50% 45%,#e53b5b20,transparent 48%);pointer-events:none}
+.vq>*{position:relative}
+.vq .kicker{color:#f3a5b2}.vq h2{font-size:clamp(38px,9vw,66px);letter-spacing:2px;color:#fff0f1;text-shadow:0 0 25px #f34e6d66}
+.vq p{color:#e3cbd3}.vq .primary{background:linear-gradient(110deg,#a92343,#e35a72);color:#fff}
+.vq-orb{width:160px;height:160px;border-radius:50%;margin:25px auto;background:radial-gradient(circle at 38% 32%,#fff4f2 0 8%,#ffb9c4 20%,#e34d68 45%,#641d3a 72%,#21172a 100%);box-shadow:0 0 25px #f34e6d88,0 0 70px #c52d5c55,0 0 0 12px #f15c7820;animation:orb 5s ease-in-out infinite}
+.vq-line{height:1px;width:min(80%,330px);margin:24px auto;background:linear-gradient(90deg,transparent,#f18b9e,transparent)}
+.vq-tag{font:10px Arial;letter-spacing:4px;color:#e9a1af}
+.vq-quote{font-size:20px!important;color:#ffe5e9!important;max-width:430px;margin:20px auto}
+@keyframes orb{50%{transform:scale(1.06);filter:hue-rotate(-10deg);box-shadow:0 0 38px #f34e6d,0 0 90px #c52d5c88,0 0 0 18px #f15c7820}}
+
 @keyframes sway{50%{transform:rotate(5deg) translateY(-5px)}}@keyframes fall{to{transform:translateY(110vh) rotate(230deg);opacity:0}}
 @keyframes breathe{0%,100%{transform:scale(.86)}50%{transform:scale(1.08)}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto}}
@@ -127,6 +139,25 @@ footer{text-align:center;font:10px Arial;letter-spacing:2px;color:#ad969e;paddin
   <button class="primary" onclick="celebrate()" style="margin-top:18px">Send me a little happiness ♡</button>
  </div>
 </section>
+
+<section class="panel vq hidden" id="visionquest">
+ <div class="vq-tag">A LITTLE AFTER-CREDITS SCENE</div>
+ <div class="vq-orb"></div>
+ <div class="kicker">VISIONQUEST · TONIGHT'S FEATURE PRESENTATION</div>
+ <h2>YOUR NEXT<br>ADVENTURE.</h2>
+ <div class="vq-line"></div>
+ <p class="vq-quote">The records can wait. The world can wait. For tonight, your only mission is to get comfortable and enjoy the story. ❤️</p>
+ <p>Blanket? Ready. Snacks? Hopefully ready. Lights? A little dimmer.</p>
+ <p>Now press play, Siaa. Let the screens glow and let your mind rest.</p>
+ <div class="vq-line"></div>
+ <div class="vq-tag">MISSION OBJECTIVE</div>
+ <p class="big" style="color:#ffe5e9">One episode. Zero worries. Maximum cozy.</p>
+ <div class="flower">🌙</div>
+ <h2 style="font-size:34px;letter-spacing:0">Goodnight, my Siaa.</h2>
+ <p>Sleep peacefully whenever you finish. You are loved more than you know. ♡</p>
+ <button class="primary" onclick="finalHug()">One last hug ♡</button>
+ <p class="tiny" style="color:#d9a9b4;margin-top:22px">END CREDITS · MADE WITH LOVE</p>
+</section>
 <footer>MADE ESPECIALLY FOR ADRASHREE SAHU · WITH LOVE ♡</footer>
 </main>
 <script>
@@ -136,7 +167,10 @@ function answer(a){show('welcome',0);if(a==='yes'){document.getElementById('welc
 function scene(btn,emoji){document.querySelectorAll('#sceneChoices .pick').forEach(x=>x.classList.remove('selected'));btn.classList.add('selected');document.getElementById('sceneReply').innerHTML='<div class="card">'+emoji+' Lovely choice. Imagine the breeze, the quiet, and absolutely no records waiting for you for a moment. ♡</div>';document.getElementById('game1next').classList.remove('hidden')}
 function star(btn,yes){if(found)return;let r=document.getElementById('starReply');if(yes){found=true;btn.classList.add('selected');r.innerHTML='<div class="card">You found it! ⭐ Your detective skills are officially excellent.</div>';document.getElementById('game2next').classList.remove('hidden')}else{r.textContent='Almost! Look for the one that is not a heart. ♡'}}
 function openLetter(){document.getElementById('env').classList.add('open');document.getElementById('letter').classList.remove('hidden');setTimeout(()=>document.getElementById('letter').scrollIntoView({behavior:'smooth',block:'center'}),120)}
-function celebrate(){let e=['💗','🌷','✨','🌸','♡','⭐'];for(let i=0;i<75;i++){let x=document.createElement('span');x.className='floaty';x.textContent=e[Math.floor(Math.random()*e.length)];x.style.left=Math.random()*100+'vw';x.style.animationDelay=Math.random()+'s';x.style.fontSize=(16+Math.random()*20)+'px';document.body.appendChild(x);setTimeout(()=>x.remove(),4200)}document.getElementById('letterText').insertAdjacentHTML('beforeend','<br><br><b>PS: Tonight, your only task is to get cozy and enjoy your episode. Goodnight, Siaa. 🌙</b>')}
+function celebrate(){let e=['💗','🌷','✨','🌸','♡','⭐'];for(let i=0;i<75;i++){let x=document.createElement('span');x.className='floaty';x.textContent=e[Math.floor(Math.random()*e.length)];x.style.left=Math.random()*100+'vw';x.style.animationDelay=Math.random()+'s';x.style.fontSize=(16+Math.random()*20)+'px';document.body.appendChild(x);setTimeout(()=>x.remove(),4200)}document.getElementById('letterText').insertAdjacentHTML('beforeend','<br><br><b>PS: Tonight, your only task is to get cozy and enjoy your episode. Goodnight, Siaa. 🌙</b>');let b=document.querySelector('#letter .primary');b.textContent='Continue to your VisionQuest ✨';b.onclick=()=>show('visionquest',100)}
 setInterval(()=>{inhale=!inhale;let b=document.getElementById('breathText');if(b)b.textContent=inhale?'breathe in':'breathe out'},4000);
 document.getElementById('env').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLetter()}});
 </script></body></html>
+<script>
+function finalHug(){let e=['❤️','✨','🌙','💗'];for(let i=0;i<55;i++){let x=document.createElement('span');x.className='floaty';x.textContent=e[Math.floor(Math.random()*e.length)];x.style.left=Math.random()*100+'vw';x.style.animationDelay=Math.random()+'s';x.style.fontSize=(18+Math.random()*20)+'px';document.body.appendChild(x);setTimeout(()=>x.remove(),4200)}}
+</script>
