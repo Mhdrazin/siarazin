@@ -57,6 +57,15 @@ footer{text-align:center;font:10px Arial;letter-spacing:2px;color:#ad969e;paddin
 .vq:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 34px,#ff526b0b 35px 36px),radial-gradient(circle at 50% 45%,#e53b5b20,transparent 48%);pointer-events:none}
 .vq>*{position:relative}
 .vq-video-bg{position:absolute!important;inset:0;z-index:0!important;overflow:hidden;opacity:.24;pointer-events:none;background:#17101f}
+/* Make the final VisionQuest scene a true full-screen experience */
+#visionquest.vq{position:fixed;inset:0;z-index:30;width:100vw;height:100vh;height:100dvh;min-height:100vh;margin:0;border:0;border-radius:0;overflow-y:auto;overflow-x:hidden;padding:clamp(24px,5vh,60px) 22px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+#visionquest.vq>*:not(.vq-video-bg){width:min(100%,650px);flex-shrink:0}
+#visionquest.vq .vq-gallery{width:min(100%,540px)}
+#visionquest.vq .vq-video-bg{position:fixed!important;inset:0!important}
+#visionquest.vq:after{position:fixed}
+body:has(#visionquest:not(.hidden)){overflow:hidden}
+@media(max-height:720px){#visionquest.vq{justify-content:flex-start;padding-top:22px;padding-bottom:36px}}
+
 .vq-video-bg iframe{position:absolute;top:50%;left:50%;width:177.78vh;height:100vh;min-width:100%;min-height:56.25vw;transform:translate(-50%,-50%) scale(1.12);border:0;filter:saturate(.8) contrast(1.08)}
 .vq:after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,#17101f88,#17101fcc 52%,#17101ff2);pointer-events:none}
 .vq>*:not(.vq-video-bg){z-index:1}
